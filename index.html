@@ -403,7 +403,6 @@
 
       // ヘッダー行から列インデックスを特定
       const headers = parseCSVRow(rows[0]);
-      console.log('Headers:', headers);
       const colIndex = {
         name: headers.findIndex(h => h === 'タイトル'),
         startDate: headers.findIndex(h => h === '開始日'),
@@ -412,7 +411,6 @@
         endTime: headers.findIndex(h => h === '終了時刻'),
         url: headers.findIndex(h => h === '概要URL')
       };
-      console.log('ColIndex:', colIndex);
 
       // 各行をパース（ヘッダーをスキップ）
       for (let i = 1; i < rows.length; i++) {
@@ -470,10 +468,7 @@
       try {
         const response = await fetch(SHEET_URL);
         const csv = await response.text();
-        console.log('CSV raw:', csv);
-        console.log('CSV first 500 chars:', csv.substring(0, 500));
         events = parseCSV(csv);
-        console.log('Parsed events:', events);
         renderEventList();
       } catch (error) {
         console.error('データ取得エラー:', error);
@@ -559,6 +554,10 @@
           const event = events.find(e => e.name === eventName);
           if (event) {
             showEventDetail([event]);
+            // スマホ版（768px未満）の場合、ページ上部にスクロール
+            if (window.innerWidth < 768) {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
           }
         });
       });
