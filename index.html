@@ -5,14 +5,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VRChatフォトコンカレンダー</title>
-  <meta name="description" content="VRChatのフォトコンテスト情報をまとめたカレンダー。開催中・開催予定のイベントを一覧で確認できます。">
-  <meta name="keywords" content="VRChat, フォトコン, フォトコンテスト, 写真コンテスト, カレンダー, イベント">
+  <meta name="description" content="VRChatのフォトコン・写真コンテスト開催情報まとめ。開催中イベントの締め切り日や開催予定を一覧でチェック。参加したいフォトコンを見逃さない！">
+  <meta name="keywords" content="VRChat, VRC, フォトコン, フォトコンテスト, 写真コンテスト, カレンダー, イベント, 締め切り, 応募, VR写真, バーチャル撮影, スクリーンショット">
   <meta property="og:title" content="VRChatフォトコンカレンダー">
-  <meta property="og:description" content="VRChatのフォトコンテスト情報をまとめたカレンダー。開催中・開催予定のイベントを一覧で確認できます。">
+  <meta property="og:description" content="VRChatのフォトコン・写真コンテスト開催情報まとめ。開催中イベントの締め切り日や開催予定を一覧でチェック。参加したいフォトコンを見逃さない！">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="VRChatフォトコンカレンダー">
-  <meta name="twitter:description" content="VRChatのフォトコンテスト情報をまとめたカレンダー。開催中・開催予定のイベントを一覧で確認できます。">
+  <meta name="twitter:description" content="VRChatのフォトコン・写真コンテスト開催情報まとめ。開催中イベントの締め切り日や開催予定を一覧でチェック。参加したいフォトコンを見逃さない！">
+  <meta name="google-site-verification" content="1F699pak29xmNCAfg74B4JmHuIltRyPUH9tzni6RElc" />
+  <link rel="canonical" href="https://yaeza-kura.github.io/vrchat-photo-contest-calendar/">
+  <meta property="og:url" content="https://yaeza-kura.github.io/vrchat-photo-contest-calendar/">
+  <meta property="og:site_name" content="VRChatフォトコンカレンダー">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#00d4ff">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "VRChatフォトコンカレンダー",
+    "description": "VRChatのフォトコン・写真コンテスト開催情報まとめ。開催中イベントの締め切り日や開催予定を一覧でチェック。参加したいフォトコンを見逃さない！",
+    "url": "https://yaeza-kura.github.io/vrchat-photo-contest-calendar/",
+    "inLanguage": "ja",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "JPY"
+    }
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -277,6 +301,46 @@
     ::-webkit-scrollbar-thumb:hover {
       background: var(--accent);
     }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+
+    .footer p {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .add-event-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      background: linear-gradient(135deg, var(--accent) 0%, #a855f7 100%);
+      color: var(--bg-primary);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px var(--accent-glow);
+    }
+
+    .add-event-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--accent-glow);
+    }
+
+    .add-event-btn svg {
+      width: 18px;
+      height: 18px;
+    }
   </style>
 </head>
 
@@ -299,14 +363,46 @@
     </section>
   </main>
 
+  <footer class="footer">
+    <p>フォトコンテスト情報をお持ちですか？</p>
+    <a href="https://forms.gle/RhZ7PaEoFUc2nFLv8" target="_blank" rel="noopener" class="add-event-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+      </svg>
+      イベントを追加する
+    </a>
+  </footer>
+
+  <script async src="https://platform.twitter.com/widgets.js"></script>
   <script>
     // Google Sheets設定
-    const SHEET_ID = '1-I3FZaJNQrtUhCXke4aGl2JGaFUBUfaKyBmUjflvaDY';
+    const SHEET_ID = '18J_41MGukwHeCE1npeAvZYXMw0Le_xjO7eP6oT7S3U0';
     const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv`;
 
     let events = [];
 
-    // CSV解析（改行を含むセルに対応）
+    // CSV行をパースしてセル配列を返す
+    function parseCSVRow(row) {
+      const values = [];
+      let cell = '';
+      let inQuotes = false;
+
+      for (let j = 0; j < row.length; j++) {
+        const char = row[j];
+        if (char === '"') {
+          inQuotes = !inQuotes;
+        } else if (char === ',' && !inQuotes) {
+          values.push(cell.trim());
+          cell = '';
+        } else {
+          cell += char;
+        }
+      }
+      values.push(cell.trim());
+      return values;
+    }
+
+    // CSV解析（改行を含むセルに対応、ヘッダーから列を動的判定）
     function parseCSV(csv) {
       const result = [];
       const rows = [];
@@ -328,35 +424,40 @@
       }
       if (current.trim()) rows.push(current);
 
+      if (rows.length === 0) return result;
+
+      // ヘッダー行から列インデックスを特定
+      const headers = parseCSVRow(rows[0]);
+      const colIndex = {
+        name: headers.findIndex(h => h === 'タイトル'),
+        startDate: headers.findIndex(h => h === '開始日'),
+        startTime: headers.findIndex(h => h === '開始時刻'),
+        endDate: headers.findIndex(h => h === '終了日'),
+        endTime: headers.findIndex(h => h === '終了時刻'),
+        url: headers.findIndex(h => h === '概要URL')
+      };
+
       // 各行をパース（ヘッダーをスキップ）
       for (let i = 1; i < rows.length; i++) {
-        const values = [];
-        let cell = '';
-        let cellInQuotes = false;
+        const values = parseCSVRow(rows[i]);
 
-        for (let j = 0; j < rows[i].length; j++) {
-          const char = rows[i][j];
-          if (char === '"') {
-            cellInQuotes = !cellInQuotes;
-          } else if (char === ',' && !cellInQuotes) {
-            values.push(cell.trim());
-            cell = '';
-          } else {
-            cell += char;
-          }
-        }
-        values.push(cell.trim());
+        const name = colIndex.name >= 0 ? values[colIndex.name] : '';
+        if (!name) continue; // タイトルが無ければスキップ
 
-        if (values[0]) {
-          result.push({
-            name: values[0] || '',
-            startDate: parseDate(values[1]),
-            endDate: parseDate(values[2]),
-            description: values[3] || '',
-            howToApply: values[4] || '',
-            url: values[5] || ''
-          });
-        }
+        const startDateStr = colIndex.startDate >= 0 ? values[colIndex.startDate] : '';
+        const startTimeStr = colIndex.startTime >= 0 ? values[colIndex.startTime] : '';
+        const endDateStr = colIndex.endDate >= 0 ? values[colIndex.endDate] : '';
+        const endTimeStr = colIndex.endTime >= 0 ? values[colIndex.endTime] : '';
+        const url = colIndex.url >= 0 ? values[colIndex.url] : '';
+
+        result.push({
+          name,
+          startDate: parseDate(startDateStr),
+          startTime: startTimeStr || null,
+          endDate: parseDate(endDateStr),
+          endTime: endTimeStr || null,
+          url
+        });
       }
       return result;
     }
@@ -372,15 +473,19 @@
       return null;
     }
 
-    // 日付フォーマット
-    function formatDate(date) {
+    // 日付フォーマット（時刻があれば追加表示）
+    function formatDate(date, time) {
       if (!date) return '-';
       const y = date.getFullYear();
       const m = date.getMonth() + 1;
       const d = date.getDate();
       const days = ['日', '月', '火', '水', '木', '金', '土'];
       const day = days[date.getDay()];
-      return `${y}年${m}月${d}日 ${day}曜日`;
+      let result = `${y}年${m}月${d}日 ${day}曜日`;
+      if (time) {
+        result += ` ${time}`;
+      }
+      return result;
     }
 
     // データ取得
@@ -409,35 +514,21 @@
         <div class="event-card">
           <div class="event-title">${escapeHtml(event.name)}</div>
           <div class="event-field">
-            <div class="event-label">開始日</div>
-            <div class="event-value">${formatDate(event.startDate)}</div>
+            <div class="event-label">開始日${event.startTime ? '時' : ''}</div>
+            <div class="event-value">${formatDate(event.startDate, event.startTime)}</div>
           </div>
           ${event.endDate ? `
           <div class="event-field">
-            <div class="event-label">終了日</div>
-            <div class="event-value">${formatDate(event.endDate)}</div>
+            <div class="event-label">終了日${event.endTime ? '時' : ''}</div>
+            <div class="event-value">${formatDate(event.endDate, event.endTime)}</div>
           </div>
           ` : ''}
-          ${event.description ? `
-          <div class="event-field">
-            <div class="event-label">説明</div>
-            <div class="event-value">${escapeHtml(event.description)}</div>
-          </div>
-          ` : ''}
-          ${event.howToApply ? `
-          <div class="event-field">
-            <div class="event-label">応募方法</div>
-            <div class="event-value">${escapeHtml(event.howToApply)}</div>
-          </div>
-          ` : ''}
-          ${event.url ? `
-          <div class="event-field">
-            <div class="event-label">URL</div>
-            <div class="event-value"><a href="${escapeHtml(event.url)}" target="_blank" rel="noopener">${escapeHtml(event.url)}</a></div>
-          </div>
-          ` : ''}
+          ${event.url ? renderUrlField(event.url) : ''}
         </div>
       `).join('');
+
+      // Twitter埋め込みを読み込む
+      setTimeout(loadTwitterEmbeds, 100);
     }
 
     // イベント一覧描画
@@ -476,7 +567,7 @@
         return `
           <div class="event-list-item" data-event="${escapeHtml(event.name)}">
             <div class="name">${escapeHtml(event.name)}</div>
-            <div class="date">${formatDate(event.startDate)} 〜 ${formatDate(event.endDate)}</div>
+            <div class="date">${formatDate(event.startDate, event.startTime)} 〜 ${formatDate(event.endDate, event.endTime)}</div>
             <div class="remaining${isOngoing ? '' : ' upcoming'}">${remainingText}</div>
           </div>
         `;
@@ -488,6 +579,10 @@
           const event = events.find(e => e.name === eventName);
           if (event) {
             showEventDetail([event]);
+            // スマホ版（768px未満）の場合、ページ上部にスクロール
+            if (window.innerWidth < 768) {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
           }
         });
       });
@@ -498,6 +593,41 @@
       const div = document.createElement('div');
       div.textContent = text;
       return div.innerHTML;
+    }
+
+    // X(Twitter)のURLか判定してツイートIDを取得
+    function getTwitterTweetId(url) {
+      const match = url.match(/(?:twitter\.com|x\.com)\/\w+\/status\/(\d+)/);
+      return match ? match[1] : null;
+    }
+
+    // URLフィールドを描画（X埋め込み対応）
+    function renderUrlField(url) {
+      const tweetId = getTwitterTweetId(url);
+      if (tweetId) {
+        return `
+          <div class="event-field">
+            <div class="twitter-embed" data-tweet-id="${tweetId}"></div>
+          </div>
+        `;
+      }
+      return `
+        <div class="event-field">
+          <div class="event-label">URL</div>
+          <div class="event-value"><a href="${escapeHtml(url)}" target="_blank" rel="noopener">${escapeHtml(url)}</a></div>
+        </div>
+      `;
+    }
+
+    // Twitter埋め込みを読み込む
+    function loadTwitterEmbeds() {
+      document.querySelectorAll('.twitter-embed[data-tweet-id]').forEach(container => {
+        const tweetId = container.dataset.tweetId;
+        if (tweetId && window.twttr && !container.dataset.loaded) {
+          container.dataset.loaded = 'true';
+          twttr.widgets.createTweet(tweetId, container, { theme: 'dark' });
+        }
+      });
     }
 
     // 初期化
