@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VRChatフォトコンカレンダー</title>
   <meta name="description" content="VRChatのフォトコン・写真コンテスト開催情報まとめ。開催中イベントの締め切り日や開催予定を一覧でチェック。参加したいフォトコンを見逃さない！">
-  <meta name="keywords" content="VRChat, VRC, フォトコン, フォトコンテスト, 写真コンテスト, カレンダー, イベント, 締め切り, 応募, VR写真, バーチャル撮影, スクリーンショット">
+  <meta name="keywords"
+    content="VRCフォトコンカレンダー, VRChatフォトコンカレンダー, VRC, フォトコン, フォトコンテスト, 写真コンテスト, カレンダー, イベント, 締め切り, 応募, VR写真, バーチャル撮影, スクリーンショット">
   <meta property="og:title" content="VRChatフォトコンカレンダー">
   <meta property="og:description" content="VRChatのフォトコン・写真コンテスト開催情報まとめ。開催中イベントの締め切り日や開催予定を一覧でチェック。参加したいフォトコンを見逃さない！">
   <meta property="og:type" content="website">
@@ -35,6 +36,14 @@
       "price": "0",
       "priceCurrency": "JPY"
     }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "VRChatフォトコンカレンダー",
+    "url": "https://yaeza-kura.github.io/vrchat-photo-contest-calendar/"
   }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -302,6 +311,53 @@
       background: var(--accent);
     }
 
+    /* Header Description */
+    .header-description {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* About Section */
+    .about-section {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      padding: 0 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .about-section {
+        padding: 0 2rem;
+      }
+    }
+
+    .about-inner {
+      background: var(--bg-secondary);
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .about-inner h2 {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .about-inner p {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      line-height: 1.8;
+      margin-bottom: 0.75rem;
+    }
+
+    .about-inner p:last-child {
+      margin-bottom: 0;
+    }
+
     /* Footer */
     .footer {
       text-align: center;
@@ -363,6 +419,14 @@
     </section>
   </main>
 
+  <section class="about-section">
+    <div class="about-inner">
+      <h2>VRCフォトコンカレンダーについて</h2>
+      <p>VRChatフォトコンカレンダーは、VRChat上で開催されるフォトコンテスト・写真コンテストの情報をまとめたサイトです。開催中のイベントの締め切り日や、これから開催予定のフォトコンを一覧で確認できます。</p>
+      <p>イベントの詳細情報、応募方法、主催者情報を簡単に検索・閲覧でき、参加したいフォトコンを見逃しません。VRChat内での撮影やスクリーンショットが好きな方はぜひご活用ください。</p>
+      <p>掲載するフォトコンテスト情報は随時募集しています。開催情報をお持ちの方は、ページ下部の「イベントを追加する」ボタンからお知らせください。</p>
+    </div>
+  </section>
   <footer class="footer">
     <p>フォトコンテスト情報をお持ちですか？</p>
     <a href="https://forms.gle/RhZ7PaEoFUc2nFLv8" target="_blank" rel="noopener" class="add-event-btn">
@@ -372,7 +436,6 @@
       イベントを追加する
     </a>
   </footer>
-
   <script async src="https://platform.twitter.com/widgets.js"></script>
   <script>
     // Google Sheets設定
